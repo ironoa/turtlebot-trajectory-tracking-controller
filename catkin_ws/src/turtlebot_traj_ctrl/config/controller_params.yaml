@@ -1,0 +1,17 @@
+controller:
+  Ts: 0.01 #sampling time
+  P_dist: 0.05  
+
+trajectory_controller:
+  T: 8.0
+  alfa: 2.0
+
+  K_prop_x: 8.0
+  K_prop_y: 8.0
+  T_integral_x: 5.0
+  T_integral_y: 5.0
+
+  # K_prop_x: 13.0
+  # K_prop_y: 13.0
+  # T_integral_x: 4.0
+  # T_integral_y: 4.0

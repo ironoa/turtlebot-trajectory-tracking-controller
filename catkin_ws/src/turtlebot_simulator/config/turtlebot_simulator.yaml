@@ -1,0 +1,18 @@
+simulator:
+  num_steps: 300000 #more than enough to record 25 seconds of simulation
+  sim_speed: 1
+  dt: 0.01 #integration step
+  Ta: 0.150
+  initial_conditions:
+    x0: 0.0
+    y0: 0.0
+    theta0: 0.0
+
+#useful only for the assignment number 1
+test: 
+  run_period: 0.01
+  T01: 2
+  V0: 0.0
+  V1: 0.5
+  omega0: 0.0
+  omega1: 2.0

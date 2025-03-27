@@ -1,0 +1,26 @@
+<launch>
+    <!-- Enable simulation time for all nodes -->
+    <param name="/use_sim_time" value="true" />
+
+    <!-- Launch rosbag record -->
+    <node pkg="rosbag" type="record" name="rosbag_recorder"
+          args="-a -O $(find turtlebot_simulator)/trajectory.bag --duration=25"
+          output="screen" /> 
+
+    <!-- Load parameters from YAML -->
+    <rosparam command="load" file="$(find turtlebot_simulator)/config/turtlebot_simulator.yaml" />
+
+    <!-- Launch the test node -->
+    <node name="test_simple" pkg="turtlebot_simulator" type="test_simple" output="screen">
+        <!-- Optional topic remapping -->
+        <remap from="cmd" to="cmd"/>
+    </node>
+
+    <!-- Launch the simulator node -->
+    <node name="turtlebot_simulator" pkg="turtlebot_simulator" type="turtlebot_simulator" output="screen" launch-prefix="bash -c 'sleep 3; $0 $@'">
+        <!-- Optional topic remapping -->
+        <remap from="cmd" to="cmd"/>
+        <remap from="state" to="state"/>
+    </node>
+
+</launch>
