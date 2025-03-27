@@ -5,6 +5,7 @@
 
 ## Requirements
 - Docker
+- [XQuartz](https://www.xquartz.org/) (Mac Only)
 
 ## How to Run
 ```sh
